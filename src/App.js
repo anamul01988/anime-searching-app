@@ -1,23 +1,26 @@
 
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  // Link
 } from "react-router-dom";
 
-import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
+
+// import About from "./components/About/About";
+// import Contact from "./components/Contact/Contact";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 function App() {
   return (
     <Router>
-      {/* <Header /> */}
+   <Header />
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
-        {/* <Route exact path="/about">
+          {/* <Route exact path="/about">
           <About />
         </Route>
         <Route exact path="/contact">
