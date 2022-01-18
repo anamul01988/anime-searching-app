@@ -12,7 +12,7 @@ import {
 // import Contact from "./components/Contact/Contact";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
-import Selected from "./components/Selected/Selected";
+import Selected from "./components/Details/Details";
 function App() {
   return (
     <Router>
@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-          <Route exact path="/Selected">
+          <Route exact path="/Details/:image_url">
           <Selected />
         </Route>
         {/* <Route exact path="/contact">

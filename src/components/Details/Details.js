@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Selected() {
+function Details() {
     return (
         <div className="container">
             <h1>Its me me Anamul haque shanto</h1>
@@ -9,4 +9,4 @@ function Selected() {
     )
 }
 
-export default Selected
+export default Details

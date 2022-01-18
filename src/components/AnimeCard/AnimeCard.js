@@ -1,10 +1,11 @@
 import React from 'react';
-import Selected from "../Selected/Selected";
 import './AnimeCard.css';
+import { Link } from "react-router-dom";
+import Details from '../Details/Details';
 
 function AnimeCard({anime}) {
     return (
-        // <Selected></Selected>
+      
         <article className="anime-card">
             <a 
             href={anime.url}
@@ -21,6 +22,22 @@ function AnimeCard({anime}) {
                 </h3>
             </a>
         </article>
+        // <div className="container">
+        //        <div className="Details">
+        //        <div className="row">
+              
+        //       {
+        //           Details.map(details => (
+        //             <div className="col-lg-12 col-sm-6">
+        //             <Link to={`/Details/${Details.anime.image_url}`}></Link>
+        //         </div>
+        //           ))
+        //       }
+            
+        //   </div>
+        //        </div>
+           
+        // </div>
                 
     )
 }

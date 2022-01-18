@@ -6,7 +6,7 @@ function Sidebar({topAnime}) {
        <div className="container">
        <aside>
            <nav>
-               <h3>Top Anime</h3>
+               <h3 className="text-color:red;">Top Anime</h3>
                {topAnime.map(anime => ( <article className="anime-card">
                <a href={anime.url}
                target="_blank"
@@ -15,8 +15,7 @@ function Sidebar({topAnime}) {
 
                 <figure>
                     <img 
-                       src={anime.image_url}
-                     alt="Anime Image"/>
+                       src={anime.image_url} alt="Anime Image" />
                 </figure>
                 <h3>
                     {anime.title}

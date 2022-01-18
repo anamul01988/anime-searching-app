@@ -1,42 +1,11 @@
- /* aside {
-    flex: 1 1 250px;
-    max-width: 250px;
-    padding-right: 16px;
-}
- aside nav {
-    padding-left: 16px;
-    padding-right: 16px;
-}
- aside h3 {
-    color: #313131;
-    font-size: 24px;
-    margin-bottom: 16px;
-}
- aside a {
-    display: inline-block;
- 
-    text-align: center;
-
-    font-size: 20px;
-    margin-bottom: 20px;
-
-    color: black;
-    text-decoration: none;
-
-    transition: 0.4s;
-}
- aside a:hover {
-    color: #008080;
-}
-
-  */
 
 
-.animeFlex{
+
+/* .animeFlex{
     display:flex;
     flex: nowrap;
     display:inline-block;
-}
+} */
 
  .anime-card {
     /* flex: 1 1 33.333%;
@@ -49,12 +18,13 @@
 text-decoration: none;
 }
 .anime-card a figure {
-display: block;
-margin-bottom: 16px;
+/* display: block;
+margin-bottom: 16px; */
 }
 .anime-card a figure img {
-display: block;
-width: 100%;
+/* display: block; */
+/* width: 100%; */
+width: 460px;
 height: 350px;
 object-fit: cover;
 border-radius: 16px;

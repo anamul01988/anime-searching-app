@@ -4,19 +4,29 @@ import './MainContent.css';
 import { NavLink } from "react-router-dom";
 
 
-function MainContent(props) {
+function MainContent({setSearch,HandleSearch,search,animeList}) {
     return (
         <main>
             <div className="main-head">
                 <form className="search-box"
-                onSubmit={props.HandleSearch}>
+                onSubmit={HandleSearch}>
                     <input type="search" placeholder="Search for an anime: "
                     required
-                    value = {props.search}
-                    onChange = {e => props.setSearch(e.target.value)}
+                    value = {search}
+                    onChange = {e =>setSearch(e.target.value)}
                     ></input>
 
+
                 </form>
+
+
+                {/* <div class="text-center">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div> */}
+
+
             </div>
             <div className="anime-list">
                 {
@@ -29,7 +39,7 @@ function MainContent(props) {
                 //      Selected
                 //   </NavLink>
 
-                    props.animeList.map(anime =>(
+                    animeList.map(anime =>(
                         <AnimeCard anime={anime} key = {anime.mal_id}/>
                     ))
                 }
