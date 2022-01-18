@@ -1,6 +1,7 @@
 import React from 'react';
 import AnimeCard from '../AnimeCard/AnimeCard';
 import './MainContent.css';
+import { NavLink } from "react-router-dom";
 
 
 function MainContent(props) {
@@ -19,12 +20,16 @@ function MainContent(props) {
             </div>
             <div className="anime-list">
                 {
+                //     <NavLink
+                //     exact
+                //     activeClassName={classes.activeLink}
+                //     className={classes.link}
+                //     to="/Selected"
+                //   >
+                //      Selected
+                //   </NavLink>
+
                     props.animeList.map(anime =>(
-                        // <div className = "anime-card">
-                        // {
-                        //     anime.title
-                        // }
-                        // </div>
                         <AnimeCard anime={anime} key = {anime.mal_id}/>
                     ))
                 }

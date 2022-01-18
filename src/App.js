@@ -12,6 +12,7 @@ import {
 // import Contact from "./components/Contact/Contact";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
+import Selected from "./components/Selected/Selected";
 function App() {
   return (
     <Router>
@@ -20,10 +21,10 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-          {/* <Route exact path="/about">
-          <About />
+          <Route exact path="/Selected">
+          <Selected />
         </Route>
-        <Route exact path="/contact">
+        {/* <Route exact path="/contact">
           <Contact />
         </Route> */}
       </Switch>

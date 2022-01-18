@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react';
-// import Header from './components/Header';
 import MainContent from '../MainContent/MainContent';
 import Sidebar from '../Sidebar/Sidebar';
 
@@ -12,40 +11,41 @@ function App() {
 		const temp = await fetch('https://api.jikan.moe/v3/top/anime/1/bypopularity')
 		.then(res => res.json())
 
-		SetTopAnime(temp.top.slice(0,5));
+		SetTopAnime(temp.top.slice(0,10));
 
 	}
     
 	const HandleSearch = e =>{
-		e.preventDefault(); //aita form ta k auto refresh kora theke atkabe. sathe form ta k grabe korbe
-		console.log(search);
+		e.preventDefault(); 
 		FetchAnime(search);
 	}
 	const FetchAnime = async (query) =>{
 		const temp = await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort=asc&limit=10`)
 		.then(res =>res.json());
 		console.log(temp.results);
-		SetAnimeList(temp.results);//aikhaner results ta ki built in function
+		SetAnimeList(temp.results);
 	}
 
 	useEffect(()=>{
 		GetTopAnime();
 		console.log(topAnime)
 	},[]);
-	
-	// console.log(topAnime)
 
 	return (
-		<div className="App">
+		<div className="container">
 	       {/* <Header></Header> */}
-		   <div className="content-wrap">   
-			   <Sidebar topAnime={topAnime}/>
-			   <MainContent
-			      HandleSearch = {HandleSearch}
-				  search = {search}
-				  setSearch = {setSearch}
-				  animeList = {animeList}
-			   ></MainContent>
+		   <div className="row">
+		       <div className="col-lg-12 col-sm-12 mt-5 ">
+					<MainContent
+						HandleSearch = {HandleSearch}
+						// search = {search}
+						setSearch = {setSearch}
+						animeList = {animeList}
+					></MainContent>
+               </div>
+			   <div className="col-lg-12 col-lg-12 mt-5 ">
+			       <Sidebar topAnime={topAnime}/>
+               </div>
 		   </div>
 		</div>
 	);

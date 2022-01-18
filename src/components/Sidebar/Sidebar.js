@@ -3,19 +3,36 @@ import './Sidebar.css'
 // import {Container} from "react-router-dom";
 function Sidebar({topAnime}) {
     return (
-    //    <Container>
-           <aside>
+       <div className="container">
+       <aside>
            <nav>
                <h3>Top Anime</h3>
-               {topAnime.map(anime => ( <a href={anime.url}
+               {topAnime.map(anime => ( <article className="anime-card">
+               <a href={anime.url}
                target="_blank"
                key={anime.mal_id}
                rel="noreferrer" >
-                  {anime.title}
-               </a>) )}
+
+                <figure>
+                    <img 
+                       src={anime.image_url}
+                     alt="Anime Image"/>
+                </figure>
+                <h3>
+                    {anime.title}
+                </h3>
+                  
+                    {/* {<img src={anime.image_url}></img>}
+
+                
+                  {anime.title} */}
+               </a>
+               </article>
+                ) )}
            </nav>
        </aside>
-    //    </Container>
+       </div>
+
     )
 }
 

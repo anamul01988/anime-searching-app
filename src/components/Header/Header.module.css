@@ -1,6 +1,7 @@
 .menu {
-    background: #fff;
-    padding: 10px 0;
+    /* background: #008080; */
+    background: #104046;
+    padding: 15px 0;
 
 }
 
@@ -13,12 +14,12 @@
 
 .menuWrapper ul li {
     display: inline-block;
-    color: #313131;
+    color: #fff;
     text-transform: capitalize;
 }
 
 .logo h4 {
-    color: #313131;
+    color: rgb(251, 251, 247);
     text-transform: capitalize;
 }
 
@@ -26,18 +27,19 @@
     outline: none;
     border: none;
     text-decoration: none;
-    color: #313131;
+    color: #ffff;
     text-transform: uppercase;
     font-weight: bold;
     padding: 5px 20px;
     border-radius: 5px;
+    margin-left: 20px;
 }
 
 
 .activeLink,
 .link:hover {
-    background: #FFF;
-    color: #24695C;
+    background: #008080;
+    color: #fff;
 }
 
 

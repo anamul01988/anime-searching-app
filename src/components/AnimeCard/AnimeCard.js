@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Selected from "../Selected/Selected";
 import './AnimeCard.css';
 
 function AnimeCard({anime}) {
     return (
+        // <Selected></Selected>
         <article className="anime-card">
             <a 
             href={anime.url}

@@ -1,0 +1,36 @@
+.anime-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 32px;
+    margin: 32px -8px 0px;
+}
+ .anime-card {
+    flex: 1 1 33.333%;
+    max-width: 33.333%;
+    padding: 16px 8px;
+}
+.anime-card a {
+text-decoration: none;
+}
+.anime-card a figure {
+display: block;
+margin-bottom: 16px;
+}
+.anime-card a figure img {
+display: block;
+width: 100%;
+height: 350px;
+object-fit: cover;
+border-radius: 16px;
+box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
+
+transition: 0.4s;
+}
+.anime-card h3 {
+color: #313131;
+}
+.anime-card a h3:hover figure img {
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+        transform: scale(1.05);
+
+}
