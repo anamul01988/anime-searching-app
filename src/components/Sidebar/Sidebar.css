@@ -40,3 +40,7 @@ color: #313131;
         transform: scale(1.05);
 
 }
+.badge{
+    display: block;
+
+}

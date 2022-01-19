@@ -1,12 +1,15 @@
 import React from 'react'
 import './Sidebar.css'
 // import {Container} from "react-router-dom";
-function Sidebar({topAnime}) {
+function Sidebar({topAnime, loading}) {
+    if(loading){
+        return <h3 className="text-center">Loading...</h3>
+    }
     return (
        <div className="container">
        <aside>
            <nav>
-               <h3 className="text-color:red;">Top Anime</h3>
+               <h3 className="  text-dark ">Top Anime</h3>
                {topAnime.map(anime => ( <article className="anime-card">
                <a href={anime.url}
                target="_blank"
@@ -14,7 +17,7 @@ function Sidebar({topAnime}) {
                rel="noreferrer" >
 
                 <figure>
-                    <img 
+                    <img className="img-fluid"
                        src={anime.image_url} alt="Anime Image" />
                 </figure>
                 <h3>
