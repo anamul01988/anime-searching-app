@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-          <Route exact path="/Details/:image_url">
+          <Route exact path="/Details/:query">
           <Selected />
         </Route>
         {/* <Route exact path="/contact">
