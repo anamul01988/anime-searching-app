@@ -19,29 +19,34 @@ function App() {
     console.log(animeList)
 	const HandleSearch = e =>{
 		e.preventDefault(); 
+		
 		FetchAnime(search);
 	}
+	// useEffect(()=>{
+	// 	FetchAnime(search);
+	// },[search])
+
 	const FetchAnime = async (query) =>{
 		// const {query} = useParams()
 		const temp = await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort=asc&limit=10`)
 		.then(res =>res.json());
 		SetAnimeList(temp.results);
 	}
+	
 
-	useEffect(()=>{ //aikhaner array ta hocce 1st parameter jeita call back function aita e ki kaj korbe identify kore jemon functin er vitor data load hoilo
+	useEffect(()=>{ 
 		const GetTopAnime = async () => {
 			setLoading(true);
 			const temp = await axios.get('https://api.jikan.moe/v3/top/anime/1/bypopularity');
 			//  SetTopAnime(temp.top.slice());
 			 SetTopAnime(temp.data.top.slice());
 			 setLoading(false);
-			// SetTopAnime(temp.data.top.slice(0,10)); aita te data dewa how ni tai ashe nai axios a must lagbe
 	
 		}
 		GetTopAnime();
-		// console.log(topAnime)
-	},[]); //specific kono fun chanlge korte caile 2nd parameter ba [] tar moddhe rakhtam . jehetu aktai tai auto data load hobe
+	},[]); 
  console.log(topAnime)
+ console.log(search)
  
  //Get current posts
  const indexOfLastPost = currentPage * postsPerPage;
@@ -60,7 +65,9 @@ function App() {
 						search = {search}
 						setSearch = {setSearch}
 						animeList = {animeList}
+						topAnime = {topAnime}
 					></MainContent>
+
                </div>
 			   <div className=" col-md-12 mt-5 ">
 				   <div className="row justify-content-center">

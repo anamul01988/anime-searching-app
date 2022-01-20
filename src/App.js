@@ -7,12 +7,9 @@ import {
   // Link
 } from "react-router-dom";
 
-
-// import About from "./components/About/About";
-// import Contact from "./components/Contact/Contact";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
-import Selected from "./components/Details/Details";
+import Details from "./components/Details/Details";
 function App() {
   return (
     <Router>
@@ -21,12 +18,7 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-          <Route exact path="/Details/:query">
-          <Selected />
-        </Route>
-        {/* <Route exact path="/contact">
-          <Contact />
-        </Route> */}
+          <Route path="/details/:id" component={Details}/>
       </Switch>
     </Router>
   );

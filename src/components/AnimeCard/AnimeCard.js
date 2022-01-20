@@ -1,15 +1,16 @@
 import React from 'react';
 import './AnimeCard.css';
-import { Link } from "react-router-dom";
-import Details from '../Details/Details';
+// import { Link } from "react-router-dom";
+// import Details from '../Details/Details';
+import {Link} from "react-router-dom";
 
-function AnimeCard({anime}) {
+function AnimeCard({anime,id}) {
     return (
       
         <article className="anime-card ">
-            <a 
-            href={anime.url}
-            target="_blank"
+          
+            <Link to={`/details/${id}`}
+            // href={anime.url}
             rel="noreferrer" >
 
                 <figure>
@@ -20,7 +21,7 @@ function AnimeCard({anime}) {
                 <h3>
                     {anime.title}
                 </h3>
-            </a>
+            </Link>
         </article>
         // <div className="container">
         //        <div className="Details">

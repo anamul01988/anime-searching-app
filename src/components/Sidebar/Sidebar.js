@@ -19,7 +19,7 @@ function Sidebar({topAnime, loading}) {
 
                             <figure>
                                 <img className="img-fluid"
-                                    src={anime.image_url} alt="Anime Image" />
+                                    src={anime.image_url} alt="Anime-Image" />
                             </figure>
                             <h3>
                                 {anime.title}

@@ -32,14 +32,14 @@ const Header = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink
+                {/* <NavLink
                   exact
                   activeClassName={classes.activeLink}
                   className={classes.link}
-                  to="/Selected"
+                  to="/details"
                 >
-                   Selected
-                </NavLink>
+                   Details
+                </NavLink> */}
               </li>
             </ul>
           </div>
