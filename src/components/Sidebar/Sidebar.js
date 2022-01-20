@@ -6,34 +6,30 @@ function Sidebar({topAnime, loading}) {
         return <h3 className="text-center">Loading...</h3>
     }
     return (
-       <div className="container">
-       <aside>
-           <nav>
-               <h3 className="  text-dark ">Top Anime</h3>
-               {topAnime.map(anime => ( <article className="anime-card">
-               <a href={anime.url}
-               target="_blank"
-               key={anime.mal_id}
-               rel="noreferrer" >
+        <div className="">
+             <nav>
+                    <h3 className="  text-dark ">Top Anime</h3>
+                    <div className="home-data">
+                    {topAnime.map(anime => (
+                   <article className="anime-card-area">
+                        <a href={anime.url}
+                        target="_blank"
+                        key={anime.mal_id}
+                        rel="noreferrer" >
 
-                <figure>
-                    <img className="img-fluid"
-                       src={anime.image_url} alt="Anime Image" />
-                </figure>
-                <h3>
-                    {anime.title}
-                </h3>
-                  
-                    {/* {<img src={anime.image_url}></img>}
-
-                
-                  {anime.title} */}
-               </a>
-               </article>
-                ) )}
-           </nav>
-       </aside>
-       </div>
+                            <figure>
+                                <img className="img-fluid"
+                                    src={anime.image_url} alt="Anime Image" />
+                            </figure>
+                            <h3>
+                                {anime.title}
+                            </h3>
+                        </a>
+                    </article>
+                    ) )}
+                    </div>
+                </nav>
+        </div>
 
     )
 }

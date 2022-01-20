@@ -4,6 +4,7 @@ import MainContent from '../MainContent/MainContent';
 import Sidebar from '../Sidebar/Sidebar';
 import Pagination from '../Pagination/Pagination';
 // import {useParams} from 'react-router-dom'
+import './DataHandle.css';
 
 function App() {
 	const [animeList, SetAnimeList] = useState([]);
@@ -12,7 +13,7 @@ function App() {
 	const [loading, setLoading] =useState(false);
 	const [currentPage, setCurrentPage] = useState(1);
 	// const [topAnimePerPage, setTopAnimePerPage] = useState(10);
-	const [postsPerPage, setPostsPerPage] = useState(15);
+	const [postsPerPage] = useState(15);
 
 	
     console.log(animeList)
@@ -24,7 +25,6 @@ function App() {
 		// const {query} = useParams()
 		const temp = await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}&order_by=title&sort=asc&limit=10`)
 		.then(res =>res.json());
-		// console.log(temp.results);
 		SetAnimeList(temp.results);
 	}
 
@@ -42,25 +42,36 @@ function App() {
 		// console.log(topAnime)
 	},[]); //specific kono fun chanlge korte caile 2nd parameter ba [] tar moddhe rakhtam . jehetu aktai tai auto data load hobe
  console.log(topAnime)
-
+ 
+ //Get current posts
  const indexOfLastPost = currentPage * postsPerPage;
  const indexOfFirstPost = indexOfLastPost - postsPerPage;
  const currentPosts = topAnime.slice(indexOfFirstPost, indexOfLastPost);
+
+ //change page
+ const paginate = pageNumber => setCurrentPage(pageNumber); //ai pageNumber jabe pagination.js a jekhane oikhane number namer argument pass hoice
 	return (
 		<div className="container">
 	       {/* <Header></Header> */}
 		   <div className="row">
-		       <div className="col-lg-12 col-sm-12 mt-5 ">
+		       <div className="col-lg-12 col-md-6 col-sm-12 mt-5 ">
 					<MainContent
 						HandleSearch = {HandleSearch}
-						// search = {search}
+						search = {search}
 						setSearch = {setSearch}
 						animeList = {animeList}
 					></MainContent>
                </div>
-			   <div className="col-lg-12 col-lg-12 mt-5 ">
-			       <Sidebar topAnime={currentPosts} loading={loading}/>
-				   <Pagination postsPerPage={postsPerPage} totalPosts={topAnime.length}></Pagination>
+			   <div className=" col-md-12 mt-5 ">
+				   <div className="row justify-content-center">
+					   <div className="col-lg-12 col-md-12 col-sm-12">
+					   <Sidebar topAnime={currentPosts} loading={loading}/>
+					   </div>
+					   <div className="col-md-12 col-sm-12 mb-5  ">
+						    <Pagination postsPerPage={postsPerPage} totalPosts={topAnime.length} paginate={paginate}></Pagination>
+						</div>
+				   </div>
+			
                </div>
 		   </div>
 		</div>

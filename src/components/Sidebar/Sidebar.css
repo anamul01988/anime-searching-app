@@ -1,46 +1,19 @@
-
-
-
-/* .animeFlex{
-    display:flex;
-    flex: nowrap;
-    display:inline-block;
-} */
-
- .anime-card {
-    /* flex: 1 1 33.333%;
-    max-width: 33.333%; */
-    float:left;
-    max-width: 50%;
+.home-data {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 32px;
+    margin: 32px -8px 0px;
+    overflow: hidden;
+}
+.anime-card-area{
+    flex:1 1 25%;
     padding: 16px 8px;
 }
-.anime-card a {
-text-decoration: none;
+.anime-card-area a h3{
+  font-size: 22px;
+  display: inline-block;
 }
-.anime-card a figure {
-/* display: block;
-margin-bottom: 16px; */
-}
-.anime-card a figure img {
-/* display: block; */
-/* width: 100%; */
-width: 460px;
-height: 350px;
-object-fit: cover;
-border-radius: 16px;
-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
-
-transition: 0.4s;
-}
-.anime-card h3 {
-color: #313131;
-}
-.anime-card a h3:hover figure img {
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
-        transform: scale(1.05);
-
-}
-.badge{
-    display: block;
-
+.anime-card-area a{
+     text-decoration: none;
+     color: #000;
 }
