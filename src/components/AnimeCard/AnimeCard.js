@@ -3,6 +3,7 @@ import './AnimeCard.css';
 // import { Link } from "react-router-dom";
 // import Details from '../Details/Details';
 import {Link} from "react-router-dom";
+import Details from '../Details/Details';
 
 function AnimeCard({anime,id}) {
     return (
@@ -10,7 +11,7 @@ function AnimeCard({anime,id}) {
         <article className="anime-card ">
           
             <Link to={`/details/${id}`}
-            // href={anime.url}
+    
             rel="noreferrer" >
 
                 <figure>
@@ -21,8 +22,15 @@ function AnimeCard({anime,id}) {
                 <h3>
                     {anime.title}
                 </h3>
+
+                {/* <Details anime={anime}></Details> */}
             </Link>
         </article>
+
+
+
+
+
         // <div className="container">
         //        <div className="Details">
         //        <div className="row">

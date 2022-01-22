@@ -28,7 +28,7 @@ function Sidebar({topAnime, loading}) {
                     </article>
                     ) )}
                     </div>
-                </nav>
+             </nav>
         </div>
 
     )

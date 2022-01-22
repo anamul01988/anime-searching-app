@@ -3,6 +3,7 @@ import AnimeCard from '../AnimeCard/AnimeCard';
 import Details from '../Details/Details';
 import './MainContent.css';
 function MainContent({setSearch,HandleSearch,search,animeList,topAnime}) {
+    console.log(search.length)
     return (
         <main>
             <div className="main-head">
@@ -33,10 +34,12 @@ function MainContent({setSearch,HandleSearch,search,animeList,topAnime}) {
             <div className="anime-list">
 
         {
-
-                    topAnime.filter((val)=> {
+                 
+                 search.length == ""?null : topAnime.filter((val)=> {
+            
                         if(search == ""){
                             return val
+                            
                         } else if (val.title.toLowerCase().includes(search.toLowerCase())){
                             return val
                         }

@@ -9,7 +9,7 @@ import './DataHandle.css';
 function App() {
 	const [animeList, SetAnimeList] = useState([]);
 	const [topAnime, SetTopAnime] = useState([]); //aitai hocce pasts state
-	const [search, setSearch] = useState(['']);
+	const [search, setSearch] = useState([]);
 	const [loading, setLoading] =useState(false);
 	const [currentPage, setCurrentPage] = useState(1);
 	// const [topAnimePerPage, setTopAnimePerPage] = useState(10);
