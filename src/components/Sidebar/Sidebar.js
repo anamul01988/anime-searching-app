@@ -1,6 +1,5 @@
 import React from 'react'
 import './Sidebar.css'
-// import {Container} from "react-router-dom";
 function Sidebar({topAnime, loading}) {
     if(loading){
         return <h3 className="text-center">Loading...</h3>

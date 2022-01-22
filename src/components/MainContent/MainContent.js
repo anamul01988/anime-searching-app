@@ -1,6 +1,5 @@
-import React, { Children } from 'react';
+
 import AnimeCard from '../AnimeCard/AnimeCard';
-import Details from '../Details/Details';
 import './MainContent.css';
 function MainContent({setSearch,HandleSearch,search,animeList,topAnime}) {
     console.log(search.length)
@@ -11,7 +10,6 @@ function MainContent({setSearch,HandleSearch,search,animeList,topAnime}) {
 
                     required
                     value = {search}
-                    // onChange = {e =>setSearch(e.target.value)}
                     onChange = {e =>setSearch(e.target.value)}
                     >
 
@@ -49,10 +47,6 @@ function MainContent({setSearch,HandleSearch,search,animeList,topAnime}) {
                 }
 
             </div>
-    
-            {/* <MainContent.Provider value={topAnime} >
-               {Children}
-            </MainContent.Provider> */}
         </main>
     )
 }

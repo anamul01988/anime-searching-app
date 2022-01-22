@@ -4,16 +4,16 @@ import MainContent from '../MainContent/MainContent';
 import Sidebar from '../Sidebar/Sidebar';
 import Pagination from '../Pagination/Pagination';
 // import {useParams} from 'react-router-dom'
-import './DataHandle.css';
+// import './DataHandle.css';
 
 function App() {
 	const [animeList, SetAnimeList] = useState([]);
-	const [topAnime, SetTopAnime] = useState([]); //aitai hocce pasts state
+	const [topAnime, SetTopAnime] = useState([]); 
 	const [search, setSearch] = useState([]);
 	const [loading, setLoading] =useState(false);
 	const [currentPage, setCurrentPage] = useState(1);
 	// const [topAnimePerPage, setTopAnimePerPage] = useState(10);
-	const [postsPerPage] = useState(15);
+	const [postsPerPage] = useState(12);
 
 	
     console.log(animeList)
@@ -22,9 +22,6 @@ function App() {
 		
 		FetchAnime(search);
 	}
-	// useEffect(()=>{
-	// 	FetchAnime(search);
-	// },[search])
 
 	const FetchAnime = async (query) =>{
 		// const {query} = useParams()
@@ -54,10 +51,9 @@ function App() {
  const currentPosts = topAnime.slice(indexOfFirstPost, indexOfLastPost);
 
  //change page
- const paginate = pageNumber => setCurrentPage(pageNumber); //ai pageNumber jabe pagination.js a jekhane oikhane number namer argument pass hoice
+ const paginate = pageNumber => setCurrentPage(pageNumber); 
 	return (
 		<div className="container">
-	       {/* <Header></Header> */}
 		   <div className="row">
 		       <div className="col-lg-12 col-md-6 col-sm-12 mt-5 ">
 					<MainContent
